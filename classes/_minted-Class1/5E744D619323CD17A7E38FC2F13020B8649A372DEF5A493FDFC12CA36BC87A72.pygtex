@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+    \PYG{k}{\PYGZbs{}documentclass}\PYG{n+nb}{\PYGZob{}}article\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}usepackage}\PYG{n+na}{[spanish]}\PYG{n+nb}{\PYGZob{}}babel\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}usepackage}\PYG{n+na}{[utf8]}\PYG{n+nb}{\PYGZob{}}inputenc\PYG{n+nb}{\PYGZcb{}}
+    \PYG{k}{\PYGZbs{}usepackage}\PYG{n+nb}{\PYGZob{}}minted\PYG{n+nb}{\PYGZcb{}}
+    This is \PYG{k}{\PYGZbs{}LaTeX}\PYG{n+nb}{\PYGZob{}\PYGZcb{}} code.
+\end{Verbatim}
