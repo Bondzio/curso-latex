@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+
+\title{Ecuaciones de Maxwell}
+\author{Daniel Felipe Rodríguez Patiño}
+% \affiliation{Universidad Nacional de Colombia}
+\date{\today}
+
+\begin{document}
+    \maketitle
+    Las ecuaciones de Maxwell reciben su nombre en
+    honor a James Clerk Maxwell, uno de los científicos
+    más brillantes de la historia. Las ecuaciones que
+    reciben su nombre, son el pilar del electromagnetismo
+    y se enuncian a continuación:
+
+    \begin{align}
+        \vec{\nabla} \cdot \vec{E} \quad &= \quad \frac{\rho}{\varepsilon_0} && \textrm{Ley de Gauss} \\
+        \vec{\nabla} \cdot \vec{B} \quad &= \quad 0 && \textrm{Ley de Gauss para el magnetismo} \\
+        \vec{\nabla} \times \vec{E} \quad &= \quad -\frac{\partial\vec{B}}{\partial t} && \textrm{Ley de Inducción de Faraday} \\
+        \vec{\nabla} \times \vec{B} \quad &= \quad \mu_0 \left(\varepsilon_0 \frac{\partial\vec{E}}{\partial t} + \vec{J} \right) && \textrm{Ley de Ampere}
+    \end{align}
+\end{document}

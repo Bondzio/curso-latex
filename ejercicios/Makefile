@@ -1,14 +1,22 @@
-p1: problema1.tex
-	pdflatex problema1.tex
-	pdflatex problema1.tex
+p1: ejercicio1.tex
+	pdflatex ejercicio1.tex
+	pdflatex ejercicio1.tex
 
-p2: problema2.tex
-	pdflatex problema2.tex
-	pdflatex problema2.tex
+p2: ejercicio2.tex
+	pdflatex ejercicio2.tex
+	pdflatex ejercicio2.tex
 
-p3: problema3.tex
-	pdflatex problema3.tex
-	pdflatex problema3.tex
+p3: ejercicio3.tex
+	pdflatex ejercicio3.tex
+	pdflatex ejercicio3.tex
+
+p4: ejercicio4.tex
+	pdflatex ejercicio4.tex
+	pdflatex ejercicio4.tex
+
+p5: ejercicio5.tex
+	pdflatex ejercicio5.tex
+	pdflatex ejercicio5.tex
 
 clean:
 	rm -f *.aux *.log
