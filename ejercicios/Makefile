@@ -1,14 +1,14 @@
-problem1: problem_1.tex
-	pdflatex problem_1.tex
-	pdflatex problem_1.tex
+p1: problema1.tex
+	pdflatex problema1.tex
+	pdflatex problema1.tex
 
-problem2: problem_2.tex
-	pdflatex problem_2.tex
-	pdflatex problem_2.tex
+p2: problema2.tex
+	pdflatex problema2.tex
+	pdflatex problema2.tex
 
-problem3: problem_3.tex
-	pdflatex problem_3.tex
-	pdflatex problem_3.tex
-	
+p3: problema3.tex
+	pdflatex problema3.tex
+	pdflatex problema3.tex
+
 clean:
 	rm -f *.aux *.log

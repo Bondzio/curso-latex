@@ -1,3 +1,7 @@
 *.aux
 *.log
-*.pdf
+*.out
+*.tex
+mientras.pdf
+
+/_minted-*
