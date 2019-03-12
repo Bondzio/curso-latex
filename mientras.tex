@@ -14,7 +14,7 @@
 \usepackage{tabularx}
 
 % \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=10cm}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
+% \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \newenvironment{exampletwoup}
   {\VerbatimEnvironment
@@ -33,20 +33,15 @@
 
 \begin{document}
 
-% \begin{tabular}{||c|c||} \hline
-%   \textbf{\emph{fórmula inline}} & \textbf{\emph{fórmula displayed}} \\ \hline
-%   \texttt{\$} \emph{fórmula} \texttt{\$} & \texttt{\$\$} \emph{fórmula} \texttt{\$\$} \\
-%   \texttt{\textbackslash(} \emph{fórmula} \texttt{\textbackslash)} & \texttt{\textbackslash[} \emph{fórmula} \texttt{\textbackslash]} \\ 
-%   \texttt{\textbackslash begin\{math\}} \emph{fórmula} \texttt{\textbackslash end\{math\}} & \texttt{\textbackslash begin\{displaymath\}} \emph{fórmula} \texttt{\textbackslash end\{displaymath\}} \\ \hline
-% \end{tabular}
+\begin{tabular}{||l|l||l|l||l|l||} \hline
+  \emph{declaración} & \emph{tamaño} & \emph{declaración} & \emph{tamaño} & \emph{declaración} & \emph{tamaño} \\ \hline
+  \texttt{\{\textbackslash tiny ...\}} & \tiny size & \texttt{\{\textbackslash normalsize ...\}} & \normalsize size & & \\
+  \texttt{\{\textbackslash scriptsize ...\}} & \scriptsize size & \texttt{\{\textbackslash large ...\}} & \large size & & \\
+  \texttt{\{\textbackslash footnotesize ...\}} & \footnotesize size & \texttt{\{\textbackslash Large ...\}} & \Large size & \texttt{\{\textbackslash huge ...\}} & \huge size\\
+  \texttt{\{\textbackslash small ...\}} & \small size & \texttt{\{\textbackslash LARGE ...\}} & \LARGE size & \texttt{\{\textbackslash Huge ...\}} & \Huge size \\ \hline
+\end{tabular}
 
-\begin{displaymath} e^{i\pi} +1 = 0 \end{displaymath}
 
-$$ e^{i\pi} + 1 = 0 $$
-
-\[e^{i\pi} + 1 = 0\]
-
-$e^{i\pi} + 1 = 0$ \(e^{i\pi} + 1 = 0\) \begin{math} e^{i\pi} + 1 = 0 \end{math}
 % Test 
 % \begin{table}
 %   \centering
