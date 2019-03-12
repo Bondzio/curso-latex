@@ -1,7 +1,8 @@
 *.aux
 *.log
 *.out
-
+# escondo las soluciones a los ejercicios
+ejercicios/*.tex
 mientras.pdf
 
 /_minted-*
