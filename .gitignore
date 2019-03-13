@@ -3,10 +3,6 @@
 *.out
 # escondo las soluciones a los ejercicios
 ejercicios/*.tex
-ejercicios/ejercicio3.pdf
-ejercicios/ejercicio4.pdf
-ejercicios/ejercicio5.pdf
-ejercicios/ejercicio6.pdf
 mientras.pdf
 
 /_minted-*
