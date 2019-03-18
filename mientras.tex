@@ -11,9 +11,16 @@
 \usepackage{booktabs}
 \usepackage{multirow}
 \usepackage{subcaption}
-\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{tabu}
+\usepackage{blindtext}
+\usepackage[table]{xcolor}
+\setlength{\arrayrulewidth}{0.5mm}
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{1}
 
-% \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=10cm}
+\newcolumntype{s}{>{\columncolor{green}} l}
+% \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=12cm}
 % \newcolumntype{Y}{>{\centering\arraybackslash}X}
 
 \newenvironment{exampletwoup}
@@ -32,14 +39,159 @@
 
 
 \begin{document}
+% \begin{minted}[frame=single]{latex}
+% \usepackage{adjustbox}
+% \begin{adjustbox}{max width=...}
+%   % tabular...
+% \end{adjustbox}
+% \end{minted}
+Cambiando el color del texto, \textbf{\textcolor{red}{rojo}}, \textcolor[RGB]{0, 255, 0}{verde}, y \textcolor{blue}{azul}. \\ \\
+\arrayrulecolor[RGB]{123, 145, 255}
+\begin{tabular}{|s|l|l|l|} \hline
+  \rowcolor{orange} Item 1 & item 2 & item 3 & \cellcolor[HTML]{8A4B08}item 4 \\
+  Item 5 & item 6 & item 7 & item 8 \\
+  \arrayrulecolor{black}
+  Item 9 & \cellcolor{red}item 10 & item 11 & item 12 \\ \cline{2-3}
+  \arrayrulecolor[RGB]{230, 200, 100}
+  Item 13 & item 14 & item 15 & item 16 \\ \hline
+\end{tabular} \\ \\
 
-\begin{tabular}{||l|l||l|l||l|l||} \hline
-  \emph{declaración} & \emph{tamaño} & \emph{declaración} & \emph{tamaño} & \emph{declaración} & \emph{tamaño} \\ \hline
-  \texttt{\{\textbackslash tiny ...\}} & \tiny size & \texttt{\{\textbackslash normalsize ...\}} & \normalsize size & & \\
-  \texttt{\{\textbackslash scriptsize ...\}} & \scriptsize size & \texttt{\{\textbackslash large ...\}} & \large size & & \\
-  \texttt{\{\textbackslash footnotesize ...\}} & \footnotesize size & \texttt{\{\textbackslash Large ...\}} & \Large size & \texttt{\{\textbackslash huge ...\}} & \huge size\\
-  \texttt{\{\textbackslash small ...\}} & \small size & \texttt{\{\textbackslash LARGE ...\}} & \LARGE size & \texttt{\{\textbackslash Huge ...\}} & \Huge size \\ \hline
-\end{tabular}
+\arrayrulecolor{black}
+{\rowcolors{1}{green}{red}
+\begin{tabular}{|l|l|l|l|} \hline
+  Item 1 & item 2 & item 3 & item 4 \\ \hline
+  Item 5 & item 6 & item 7 & item 8 \\ \hline
+  Item 9 & item 10 & item 11 & item 12 \\ \hline
+  Item 13 & item 14 & item 15 & item 16 \\ \hline
+\end{tabular}}
+% \begin{minted}[frame=single]{latex}
+% % Preámbulo
+% \setlength{\arrayrulewidth}{1mm}
+% \setlength{\tabcolsep}{18pt}
+% \renewcommand{\arraystretch}{1.5}
+% \end{minted}
+% \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|  }
+%   \hline
+%   \multicolumn{3}{|c|}{Country List} \\
+%   \hline
+%   Country Name     or Area Name& ISO ALPHA 2 Code &ISO ALPHA 3 \\
+%   \hline
+%   Afghanistan & AF &AFG \\
+%   Aland Islands & AX   & ALA \\
+%   Albania &AL & ALB \\
+%   Algeria    &DZ & DZA \\
+%   American Samoa & AS & ASM \\
+%   Andorra & AD & AND   \\
+%   Angola & AO & AGO \\
+%   \hline
+% \end{tabular}
+% \begin{minted}[frame=single]{latex}
+% Por aquí viene el texto...
+
+% \begin{wraptable}{aligment}{width}
+%   \centering
+%   \begin{tabular}{columnas}
+%     % contenido de la tabla
+%   \end{tabular}
+%   \caption{Descripción}
+%   \label{tab:etiqueta}
+% \end{wraptable}
+
+% Y por aquí sigue el texto, rodeando la tabla...
+% \end{minted}
+
+% \blindtext
+
+% \begin{wraptable}{r}{0.5\textwidth}
+%   \centering
+%   \begin{tabular}{||l|l||} \hline
+%     algo & algo \\
+%     algo & algo \\ \hline
+%   \end{tabular}
+%   \caption{Descripción}
+%   \label{tab:etiqueta}
+% \end{wraptable}
+
+% \blindtext
+
+% \begin{tabular}{|s|m{3cm}|m{3cm}|} \hline
+% En esta celda hay mucho texto, pero se acomoda porque la longitud de la columna es fija & celda 2 & celda 3 \\ \hline
+% En esta celda sucede lo mismo & celda 5 & celda 6 \\ \hline
+% celda 7 & celda 8 & celda 9 \\ \hline
+% \end{tabular}
+
+% \begin{minted}[frame=single]{latex}
+% \begin{tabular}{|m{5em}|m{1cm}|m{1cm}|} \hline
+%   texto & celda 2 & celda 3 \\ \hline
+%   más texto & celda 5 & celda 6 \\ \hline
+%   celda 7 & celda 8 & celda 9 \\ \hline
+% \end{tabular}
+% \end{minted}}
+
+% \begin{minted}[frame=single]{latex}
+%   \begin{tabu} to 0.5\textwidth {|X[l]|X[c]|X[r]|}\hline
+%     item 11  & item 12 & item 13 \\ \hline
+%     item 21  & item 22  & item 23 \\ \hline
+%   \end{tabu}
+% \end{minted}
+  
+% \begin{minted}[frame=single]{latex}
+%   Por aquí viene el texto...
+
+%   \begin{wrapfigure}{aligment}{width}
+%     \includegraphics[options]{figname}
+%     \caption{Descripción}
+%     \label{fig:etiqueta}
+%   \end{wrapfigure}
+  
+%   Por acá sigue el texto, rodeando la imagen...
+% \end{minted}
+% Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet volutpat libero, et vulputate sapien. Pellentesque diam orci, feugiat non euismod a, fringilla sit amet magna. Sed elementum ante id tortor interdum tempor. Fusce at aliquet purus. Pellentesque a ultrices orci. Etiam non condimentum arcu, quis condimentum risus. Nam in fermentum dolor. \\
+
+% \begin{wrapfigure}{l}{0.25\textwidth}
+%   \centering
+%   \includegraphics[width=0.9\linewidth]{aguila}
+%   \caption{Águila}
+%   \label{fig:aguila}
+% \end{wrapfigure}
+
+% Duis fermentum tempor neque, vitae finibus eros pretium tempor. Sed eget nulla eget elit elementum laoreet. Integer placerat imperdiet turpis, vel gravida tortor faucibus in. Sed et felis auctor, lacinia mauris quis, feugiat ante. Etiam nec molestie tortor. Proin nisi tortor, blandit ac mi sed, vehicula ultrices nisl. Sed eget metus nec ex tempor malesuada. Maecenas sollicitudin libero nisi, ac imperdiet sapien ornare ut. Phasellus vehicula ligula nec nisl feugiat feugiat. Nullam ut facilisis est. Nam molestie mauris nec ligula laoreet molestie vel sed tellus. Donec tincidunt cursus risus, et vehicula augue gravida et. Aenean fringilla justo at turpis malesuada vestibulum. Aenean erat elit, condimentum non rutrum eget, pretium et elit. Integer pellentesque, turpis quis ultrices elementum, nunc purus lobortis ex, nec imperdiet leo nulla a nisi. 
+
+% \begin{tabular}{||c|l||} \hline
+%   \emph{Parámetro} & \emph{Posición} \\ \hline
+%   \texttt{h} & \emph{aquí} si es posible\\
+%   \texttt{t} & al \emph{inicio} de la página \\
+%   \texttt{b} & al \emph{final} de la página \\
+%   \texttt{p} & en una \emph{página} especial de solo flotantes \\
+%   \texttt{!} & ignorar aspectos estéticos \\
+%   \texttt{H} & \emph{aquí} definitivamente. Se requiere el paquete \emph{float} \\ \hline
+% \end{tabular}
+
+% \begin{tabular}{||l|l||} \hline
+%   \emph{Abreviación} & \emph{Definición} \\ \hline
+%   \verb|pt| & un punto, es la unidad por defecto. Alrededor de 0.3515 mm \\
+%   \verb|mm| & un milímetro \\
+%   \verb|cm| & un centímetro \\
+%   \verb|in| & una pulgada \\
+%   \verb|ex| & el alto de una \textbf{x} en la fuente actual \\
+%   \verb|em| & el ancho de una \textbf{m} en la fuente actual \\
+%   \verb|\columnsep| & distancia entre columnas \\
+%   \verb|\columnwidth| & ancho de la columna \\
+%   \verb|\linewidth| & ancho de la línea en el ambiente actual \\
+%   \verb|\paperwidth| & ancho de la página \\
+%   \verb|\paperheight| & alto de la página \\
+%   \verb|\textwidth| & ancho del texto \\
+%   \verb|\textheight| & alto del texto \\
+%   \verb|\unitlenght| & unidades de logitud en el ambiente \emph{picture} \\ \hline
+% \end{tabular}
+
+% \begin{tabular}{||l|l||l|l||l|l||} \hline
+%   \emph{declaración} & \emph{tamaño} & \emph{declaración} & \emph{tamaño} & \emph{declaración} & \emph{tamaño} \\ \hline
+%   \texttt{\{\textbackslash tiny ...\}} & \tiny size & \texttt{\{\textbackslash normalsize ...\}} & \normalsize size & & \\
+%   \texttt{\{\textbackslash scriptsize ...\}} & \scriptsize size & \texttt{\{\textbackslash large ...\}} & \large size & & \\
+%   \texttt{\{\textbackslash footnotesize ...\}} & \footnotesize size & \texttt{\{\textbackslash Large ...\}} & \Large size & \texttt{\{\textbackslash huge ...\}} & \huge size\\
+%   \texttt{\{\textbackslash small ...\}} & \small size & \texttt{\{\textbackslash LARGE ...\}} & \LARGE size & \texttt{\{\textbackslash Huge ...\}} & \Huge size \\ \hline
+% \end{tabular}
 
 
 % Test 
@@ -90,7 +242,6 @@
 %     \includegraphics[width=\linewidth]{aguila}
 %     \caption{Águila}\label{fig:aguila}
 %   \end{subfigure}
-
 %   \caption{Mascotas}\label{fig:mascotas}
 % \end{figure}
 
