@@ -29,5 +29,9 @@ p7: ejercicio7.tex
 p8: ejercicio8.tex
 	pdflatex ejercicio8.tex
 	pdflatex ejercicio8.tex
+
+p9: ejercicio9.tex
+	pdflatex ejercicio9.tex
+	pdflatex ejercicio9.tex
 clean:
 	rm -f *.aux *.log
