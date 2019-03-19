@@ -1,0 +1,43 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{minted}
+
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\newcommand{\bftt}[1]{\textbf{\texttt{#1}}}
+\newcommand{\cmd}[1]{{\color[HTML]{008000}\bftt{#1}}}
+\newcommand{\bs}{\char`\\}
+\newcommand{\cmdbs}[1]{\cmd{\bs#1}}
+
+\title[Presentaciones en \LaTeX]
+{\huge{Presentaciones \texttt{beamer} en \LaTeX}}
+\subtitle{\textsl{Una introducción}}
+\author{Daniel Felipe Rodríguez Patiño}
+\institute[]{Facultad de Ciencias Exactas y Naturales \\
+    Universidad Nacional de Colombia}
+\date{\today}
+% \logo{\includegraphics[height=1.2cm]{logo_unal}}
+
+\begin{document}
+    %%%%%%%%%%%%%%%%%%%%%%%%
+    \frame{\titlepage}
+    %%%%%%%%%%%%%%%%%%%%%%%%
+
+    \section{Introducción}
+    \begin{frame}[fragile]{\insertsection}
+        Una presentación muy sencilla puede tomar la forma
+        \begin{center}
+            \begin{minipage}{0.6\linewidth}
+                \inputminted[fontsize=\scriptsize, frame=single]{latex}{beamer_minimal.tex}
+            \end{minipage}
+        \end{center}
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{\insertsection}
+        \begin{itemize}
+            \item \cmdbs{documentclass}article
+        \end{itemize}
+    \end{frame}
+\end{document}

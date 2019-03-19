@@ -8,6 +8,10 @@
 *.fls 
 *.xml
 *.pyg
+*.nav 
+*.snm 
+*.toc
+*.vrb
 # escondo las soluciones a los ejercicios
 ejercicios/*.tex
 !ejercicios/ejercicio7.tex
