@@ -6,4 +6,4 @@ mientras: mientras.tex
 
 
 clean:
-	rm -f *.aux *.log *.pyg *.out *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.xml
+	rm -f *.aux *.log *.pyg *.out *.bbl *.bcf *.blg *.fdb_latexmk *.fls *.xml *.pyg

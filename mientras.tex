@@ -24,7 +24,7 @@
 \renewcommand{\arraystretch}{1}
 \addbibresource{references.bib}
 \newcolumntype{s}{>{\columncolor{green}} l}
-\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=6.8cm}
+% \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=12cm}
 % \newcolumntype{Y}{>{\centering\arraybackslash}X}
 \definecolor{algo}{RGB}{170, 170, 255}
 
@@ -44,22 +44,18 @@
 
 
 \begin{document}
-\begin{minted}[frame=single]{bibtex}
-@article{einstein,
-  author = "Albert Einstein",
-  title = "{Zur Elektrodynamik bewegter K{\"o}rper}. ({German})
-  [{On} the electrodynamics of moving bodies]",
-  journal = "Annalen der Physik",
-  volume = "322",
-  number = "10",
-  pages = "891--921",
-  year = "1905",
-  DOI = "http://dx.doi.org/10.1002/andp.19053221004",
-  keywords = "physics"
-}
-\end{minted}
+% \begin{minted}[frame=single]{latex}
+% Texto relacionado con la 
+% referencia \cite{label1}, ...
+
+% \begin{thebibliography}{9}
+%   \bibitem{label1} ref1
+%   \bibitem{label2} ref2
+%   \bibitem{label3} ref3
+% \end{thebibliography}
+% \end{minted}
 % El artículo de Einstein \cite{einstein} y el 
-% libro de Dirac \cite{dirac} están relacionados con la física.
+% libro\footnote{Esto es cierto} de Dirac \cite{dirac} están relacionados con la física.
 
 % \printbibliography
 
@@ -69,25 +65,25 @@
 %   % tabular...
 % \end{adjustbox}
 % \end{minted}
-% Cambiando el color del texto, \textbf{\textcolor{red}{rojo}}, \textcolor[RGB]{0, 255, 0}{verde}, y \textcolor{blue}{azul}. \\ \\
-% \arrayrulecolor[RGB]{123, 145, 255}
-% \begin{tabular}{|s|l|l|l|} \hline
-%   \rowcolor{orange} Item 1 & item 2 & item 3 & \cellcolor[HTML]{8A4B08}item 4 \\
-%   Item 5 & item 6 & item 7 & item 8 \\
-%   \arrayrulecolor{black}
-%   Item 9 & \cellcolor{red}item 10 & item 11 & item 12 \\ \cline{2-3}
-%   \arrayrulecolor[RGB]{230, 200, 100}
-%   Item 13 & item 14 & item 15 & item 16 \\ \hline
-% \end{tabular} \\ \\
+Cambiando el color del texto, \textbf{\textcolor{red}{rojo}}, \textcolor[RGB]{0, 255, 0}{verde}, y \textcolor{blue}{azul}. \\ \\
+\arrayrulecolor[RGB]{123, 145, 255}
+\begin{tabular}{|s|l|l|l|} \hline
+  \rowcolor{orange} Item 1 & item 2 & item 3 & \cellcolor[HTML]{8A4B08}item 4 \\
+  Item 5 & item 6 & item 7 & item 8 \\
+  \arrayrulecolor{black}
+  Item 9 & \cellcolor{red}item 10 & item 11 & item 12 \\ \cline{2-3}
+  \arrayrulecolor[RGB]{230, 200, 100}
+  Item 13 & item 14 & item 15 & item 16 \\ \hline
+\end{tabular} \\ \\
 
-% \arrayrulecolor{black}
-% {\rowcolors{1}{algo}{red}
-% \begin{tabular}{|l|l|l|l|} \hline
-%   Item 1 & item 2 & item 3 & item 4 \\ \hline
-%   Item 5 & item 6 & item 7 & item 8 \\ \hline
-%   Item 9 & item 10 & item 11 & item 12 \\ \hline
-%   Item 13 & item 14 & item 15 & item 16 \\ \hline
-% \end{tabular}}
+\arrayrulecolor{black}
+{\rowcolors{1}{algo}{red}
+\begin{tabular}{|l|l|l|l|} \hline
+  Item 1 & item 2 & item 3 & item 4 \\ \hline
+  Item 5 & item 6 & item 7 & item 8 \\ \hline
+  Item 9 & item 10 & item 11 & item 12 \\ \hline
+  Item 13 & item 14 & item 15 & item 16 \\ \hline
+\end{tabular}}
 % \begin{minted}[frame=single]{latex}
 % % Preámbulo
 % \setlength{\arrayrulewidth}{1mm}

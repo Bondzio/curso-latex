@@ -7,10 +7,10 @@
 *.fdb_latexmk 
 *.fls 
 *.xml
+*.pyg
 # escondo las soluciones a los ejercicios
 ejercicios/*.tex
 !ejercicios/ejercicio7.tex
-!ejercicios/ejercicio9.tex
 mientras.pdf
 
 /_minted-*
