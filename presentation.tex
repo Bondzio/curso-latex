@@ -3,18 +3,24 @@
 \usepackage[spanish]{babel}
 \usepackage{minted}
 \usepackage{ragged2e}
+\usepackage{xcolor}
+% \usepackage{verbatim}
 
-\usetheme[progressbar=frametitle]{metropolis}
-\setbeamertemplate{frame numbering}[fraction]
-\useoutertheme{metropolis}
-\useinnertheme{metropolis}
-\usefonttheme{metropolis}
-\usecolortheme{spruce}
-\setbeamercolor{background canvas}{bg=white}
+% \usetheme[progressbar=frametitle]{metropolis}
+% \setbeamertemplate{frame numbering}[fraction]
+% \useoutertheme{metropolis}
+% \useinnertheme{metropolis}
+% \usefonttheme{metropolis}
+% \usecolortheme{spruce}
+% \setbeamercolor{background canvas}{bg=white}
+
+\usetheme{Madrid}
+\usecolortheme{whale}
 \usefonttheme{professionalfonts}
 
+\definecolor{mygreen}{HTML}{008000}
 \newcommand{\bftt}[1]{\textbf{\texttt{#1}}}
-\newcommand{\cmd}[1]{{\color[HTML]{008000}\bftt{#1}}}
+\newcommand{\cmd}[1]{{\color{mygreen}\bftt{#1}}}
 \newcommand{\bs}{\char`\\}
 \newcommand{\cmdbs}[1]{\cmd{\bs#1}}
 
@@ -32,8 +38,7 @@
     \frame{\titlepage}
     %%%%%%%%%%%%%%%%%%%%%%%%
 
-    \section{Introducción}
-    \begin{frame}[fragile]{\insertsection}
+    \begin{frame}[fragile]{Introducción}
         Una presentación muy sencilla puede tomar la forma
         \begin{center}
             \begin{minipage}{0.6\linewidth}
@@ -43,7 +48,7 @@
     \end{frame}
 
     %%%%%%%%%%%%%%%%%
-    \begin{frame}[fragile]{\insertsection}
+    \begin{frame}[fragile]{Introducción}
         \begin{itemize}
             \justifying
             \item \mint{latex}|\documentclass{beamer}| Declaramos que esto es una presentación de \texttt{beamer}.
@@ -67,7 +72,7 @@
     \begin{frame}
         \begin{itemize}
             \justifying
-            \item La distribución de cada elemento en la página de título, depende del tema usado. \href{http://deic.uab.es/~iblanes/beamer_gallery/}{\textcolor{blue}{\underline{Aquí}}} hay una galería de temas.
+            \item La distribución de cada elemento en la página de título, depende del tema usado. \href{https://hartwork.org/beamer-theme-matrix/}{\textcolor{blue}{\underline{Aquí}}} hay una galería de temas.
             \item El título de la presentación va entre llaves. Es posible agregar un título opcional, más corto, entre corchetes.
             \item Para los autores, es opcional agregar una versión corta de los nombres de los autores entre corchetes. Luego, entre llaves van los nombres completos de los autores, separados por \cmdbs{and}. También, es posible agregar una referencia a la institución de cada autor con \cmdbs{inst}.
             \item El nombre de los institutos va entre llaves y se separan con \cmdbs{and}. Es opcional agregar un acrónimo de los institutos entre corchetes.
@@ -76,7 +81,6 @@
     \end{frame}
 
     %%%%%%%%%%%%%%%%%%%%
-    \section{Tabla de contenidos}
     \begin{frame}{Creando tabla de contenidos}
         \justifying
         Al igual que en un documento, una presentación también suele ser dividida en secciones, especialmente cuando es muy larga. En ese caso, es posible agregar una tabla de contenidos al inicio del documento. Ejemplo:
@@ -86,7 +90,8 @@
             \end{minipage}
         \end{center}
     \end{frame}
-    %%%%%%%%%%%%%%%%%%%%%%%%%5
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}{Creando tabla de contenidos}
         \justifying
         Si se quiere mostrar la tabla de contenidos al inicio de cada sección, utilizar el siguiente código en el \textsl{preámbulo} del documento
@@ -99,8 +104,7 @@
     \end{frame}
 
     %%%%%%%%%%%%%%%%%%%%
-    \section{Añadiendo efectos}
-    \begin{frame}{\insertsection}
+    \begin{frame}{Añadiendo efectos}
         A continuación se ilustra por qué un \textsl{frame} no equivale siempre a una sola diapositiva \pause \\ [3ex]
         \begin{minipage}{0.45\linewidth}
             \begin{itemize}
@@ -116,17 +120,102 @@
     \end{frame}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \begin{frame}{Modo matemático funciona igual}
-        \begin{equation}
-            e^{i\pi} + 1 = 0
-        \end{equation}
-        \begin{equation}
-            \nu\mu\alpha\beta\gamma
-        \end{equation}
-        \begin{equation}
-            1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \cdots = \frac{\pi}{4}
-        \end{equation}
+    \begin{frame}[fragile]{Modo matemático funciona igual}
+        \begin{itemize}
+            \justifying
+            \item A continuación se muestran algunas ecuaciones escritas en modo matemático.
+            \vspace{9pt}
+            \begin{equation}
+                e^{i\pi} + 1 = 0
+            \end{equation}
+            \begin{equation}
+                \nu\mu\alpha\beta\gamma
+            \end{equation}
+            \begin{equation}
+                1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \cdots = \frac{\pi}{4}
+            \end{equation}
+            \vspace{3pt}
+            \item Para que el estilo sea el de siempre, debemos agregar en el
+             \textsl{preámbulo} la línea {\color{mygreen} \verb|\usefonttheme{|}\verb|professionalfonts|{\color{mygreen}\verb|}|}
+        \end{itemize}
     \end{frame}
 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{Resaltando cosas importantes}
+        \justifying
+        En una presentación es \alert{buena práctica} remarcar puntos importantes para llamar
+        la \alert{atención} de la audiencia.
+        \begin{itemize}
+            \justifying
+            \item Para resaltar una palabra o una frase, el comando {\color{mygreen}\verb|\alert{}|} cambia
+            el estilo del texto entre llaves. Cómo luzca ese texto depende del tema usado.
+            \item Para resaltar un párrafo con conceptos, definiciones, teoremas o ejemplos, la mejor opción
+            es utilizar una caja. Existen tres tipos de cajas, y es decisión del autor cuál usar:
+            \begin{itemize}
+                \item \verb|block|
+                \item \verb|alertblock|
+                \item \verb|examples|
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{Temas}
+        \begin{itemize}
+            \justifying
+            \item Es muy fácil usar un \href{https://hartwork.org/beamer-theme-matrix/}{\textcolor{blue}{\underline{tema}}} diferente en la presentación. Simplemente hay que usar el comando
+            {\color{mygreen}\verb|\usetheme{|}\verb|nombre del tema|{\color{mygreen}\verb|}|} en el
+            \textsl{preámbulo}.
+            \item Los temas pueden combinarse con un \textbf{color de tema}, con el comando {\color{mygreen}\verb|\usecolortheme{|}\verb|nombre del color|{\color{mygreen}\verb|}|}.
+            Esto cambia el color usado para distintos elementos de la presentación. {\color{mygreen}\verb|\usecolortheme|} debe ir
+            siempre después que  {\color{mygreen}\verb|\usetheme|}
+        \end{itemize}
+    \end{frame}    
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{Tipo y tamaño de fuente}
+        \begin{minipage}{0.93\paperwidth}
+        \begin{itemize}
+            \justifying
+            \item El \textbf{tamaño de fuente} puede pasarse como parámetro a la clase \texttt{beamer} al inicio del documento.
+            Los tamaños de fuente disponibles son 8pt, 9pt, 10pt, 11pt (por defecto), 12pt, 14pt, 17pt y 20pt.
+            \item Para cambiar los tipos de fuente se utiliza un comando que ya vimos antes:  {\color{mygreen} \verb|\usefonttheme{}|}.
+            Los tipos de fuente disponibles son: \texttt{default}, \texttt{professionalfonts}, \texttt{serif}, \texttt{structurebold},
+            \texttt{structureitalicserif} y \texttt{structuresmallcapsserif}.
+        \end{itemize}
+        \end{minipage}
+    \end{frame}
     
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{Columnas}
+        En ocasiones, la información en una presentación luce mejor en un formato de dos columnas. Para eso existe el ambiente
+        \textsl{columns}.
+        \vspace{5mm}
+        \begin{center}
+            \begin{minipage}{0.85\textwidth}
+                \inputminted[fontsize=\tiny, frame=single]{latex}{two_columns.tex}
+            \end{minipage}
+        \end{center}
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}{Diapositiva con dos columnas}
+        \begin{columns}[totalwidth=\textwidth]
+            \begin{column}[t]{0.5\textwidth}
+            \centering
+            \textsc{Ecuación de Schrödinger en una columna}.
+            \vspace{0.5cm}
+            \begin{equation*}
+                -\frac{\hbar^2}{2m}\nabla^2\psi + V\psi =  i\hbar\frac{\partial \psi}{\partial t}
+            \end{equation*}
+            \end{column}
+            \vrule{}
+            \begin{column}[t]{0.5\textwidth}
+                \centering
+                \emph{\textrm{Imagen de un gato en la otra}}\\ [2ex]
+                \centering
+                \includegraphics[width=0.8\linewidth]{gato.jpeg}
+            \end{column}
+        \end{columns}        
+    \end{frame}
 \end{document}
