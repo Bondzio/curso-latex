@@ -2,9 +2,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{minted}
+\usepackage{ragged2e}
 
-\usetheme{Madrid}
-\usecolortheme{beaver}
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{frame numbering}[fraction]
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+\usefonttheme{metropolis}
+\usecolortheme{spruce}
+\setbeamercolor{background canvas}{bg=white}
+\usefonttheme{professionalfonts}
+
 \newcommand{\bftt}[1]{\textbf{\texttt{#1}}}
 \newcommand{\cmd}[1]{{\color[HTML]{008000}\bftt{#1}}}
 \newcommand{\bs}{\char`\\}
@@ -37,7 +45,88 @@
     %%%%%%%%%%%%%%%%%
     \begin{frame}[fragile]{\insertsection}
         \begin{itemize}
-            \item \cmdbs{documentclass}article
+            \justifying
+            \item \mint{latex}|\documentclass{beamer}| Declaramos que esto es una presentación de \texttt{beamer}.
+            \item \mint{latex}|\frame{\titlepage}| Genera la página de título.
+            \item El ambiente \textsl{frame} crea una diapositiva. El comando \cmdbs{frametitle} es autodescriptivo.
+            \item El contenedor básico en \texttt{beamer} es el \textbf{frame}. Sin embargo, un \textsl{frame} no es equivalente a una diapositiva siempre. Un solo \texttt{frame} puede contener múltiples diapositivas.
         \end{itemize}
     \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{La página de título}
+        Ejemplo de los contenidos de una página de título
+        \begin{center}
+            \begin{minipage}{0.6\linewidth}
+                \inputminted[fontsize=\scriptsize, frame=single]{latex}{beamer_title.tex}
+            \end{minipage}
+        \end{center}
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}
+        \begin{itemize}
+            \justifying
+            \item La distribución de cada elemento en la página de título, depende del tema usado. \href{http://deic.uab.es/~iblanes/beamer_gallery/}{\textcolor{blue}{\underline{Aquí}}} hay una galería de temas.
+            \item El título de la presentación va entre llaves. Es posible agregar un título opcional, más corto, entre corchetes.
+            \item Para los autores, es opcional agregar una versión corta de los nombres de los autores entre corchetes. Luego, entre llaves van los nombres completos de los autores, separados por \cmdbs{and}. También, es posible agregar una referencia a la institución de cada autor con \cmdbs{inst}.
+            \item El nombre de los institutos va entre llaves y se separan con \cmdbs{and}. Es opcional agregar un acrónimo de los institutos entre corchetes.
+            \item Finalmente, en \cmdbs{logo}, se agrega el logo.
+        \end{itemize}
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \section{Tabla de contenidos}
+    \begin{frame}{Creando tabla de contenidos}
+        \justifying
+        Al igual que en un documento, una presentación también suele ser dividida en secciones, especialmente cuando es muy larga. En ese caso, es posible agregar una tabla de contenidos al inicio del documento. Ejemplo:
+        \begin{center}
+            \begin{minipage}{0.45\linewidth}
+                \inputminted[fontsize=\scriptsize, frame=single]{latex}{contents_frame.tex}
+            \end{minipage}
+        \end{center}
+    \end{frame}
+    %%%%%%%%%%%%%%%%%%%%%%%%%5
+    \begin{frame}{Creando tabla de contenidos}
+        \justifying
+        Si se quiere mostrar la tabla de contenidos al inicio de cada sección, utilizar el siguiente código en el \textsl{preámbulo} del documento
+        \begin{center}
+            \begin{minipage}{0.52\linewidth}
+                \inputminted[fontsize=\scriptsize, frame=single]{latex}{contents_frame2.tex}
+            \end{minipage}
+        \end{center}
+        \textbf{Nota}: Si se usa \cmdbs{AtBeginSubsection} en lugar de \cmdbs{AtBeginSection}, la tabla de contenidos aparecerá al inicio de cada subsección.
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%
+    \section{Añadiendo efectos}
+    \begin{frame}{\insertsection}
+        A continuación se ilustra por qué un \textsl{frame} no equivale siempre a una sola diapositiva \pause \\ [3ex]
+        \begin{minipage}{0.45\linewidth}
+            \begin{itemize}
+                \item Primer elemento.\pause
+                \item Segundo elemento.\pause
+                \item Tercer elemento.\pause
+            \end{itemize}
+        \end{minipage}
+        \begin{minipage}{0.45\linewidth}
+            Lo anterior se logró con el siguiente código \pause
+            \inputminted[fontsize=\scriptsize, frame=single]{latex}{pause_ex.tex}
+        \end{minipage}
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}{Modo matemático funciona igual}
+        \begin{equation}
+            e^{i\pi} + 1 = 0
+        \end{equation}
+        \begin{equation}
+            \nu\mu\alpha\beta\gamma
+        \end{equation}
+        \begin{equation}
+            1 - \frac{1}{3} + \frac{1}{5} - \frac{1}{7} + \frac{1}{9} - \cdots = \frac{\pi}{4}
+        \end{equation}
+    \end{frame}
+
+    
 \end{document}
