@@ -3,7 +3,9 @@
 \usepackage[spanish]{babel}
 \usepackage{minted}
 \usepackage{ragged2e}
-\usepackage{xcolor}
+\usepackage{subcaption}
+% \usepackage{subfig}
+% \usepackage{xcolor}
 % \usepackage{verbatim}
 
 % \usetheme[progressbar=frametitle]{metropolis}
@@ -24,20 +26,27 @@
 \newcommand{\bs}{\char`\\}
 \newcommand{\cmdbs}[1]{\cmd{\bs#1}}
 
+\setbeamertemplate{caption}[numbered]
+
 \title[Presentaciones en \LaTeX]
 {\huge{Presentaciones \texttt{beamer} en \LaTeX}}
 \subtitle{\textsl{Una introducción}}
 \author{Daniel Felipe Rodríguez Patiño}
-\institute[]{Facultad de Ciencias Exactas y Naturales \\
-    Universidad Nacional de Colombia}
+\institute[]{Universidad Nacional de Colombia}
 \date{\today}
-% \logo{\includegraphics[height=1.2cm]{logo_unal}}
+\titlegraphic{\includegraphics[height=1.3cm]{logo_unal}}
 
 \begin{document}
     %%%%%%%%%%%%%%%%%%%%%%%%
     \frame{\titlepage}
     %%%%%%%%%%%%%%%%%%%%%%%%
-
+    % \begin{frame}
+    %     \raggedleft
+    %     \begin{minipage}{0.3\textwidth}
+    %         \includegraphics[width=\linewidth]{logo_unal.png}
+    %     \end{minipage}
+    %     \titlepage
+    % \end{frame}
     \begin{frame}[fragile]{Introducción}
         Una presentación muy sencilla puede tomar la forma
         \begin{center}
@@ -54,7 +63,7 @@
             \item \mint{latex}|\documentclass{beamer}| Declaramos que esto es una presentación de \texttt{beamer}.
             \item \mint{latex}|\frame{\titlepage}| Genera la página de título.
             \item El ambiente \textsl{frame} crea una diapositiva. El comando \cmdbs{frametitle} es autodescriptivo.
-            \item El contenedor básico en \texttt{beamer} es el \textbf{frame}. Sin embargo, un \textsl{frame} no es equivalente a una diapositiva siempre. Un solo \texttt{frame} puede contener múltiples diapositivas.
+            \item El contenedor básico en \texttt{beamer} es el \textbf{frame}. Sin embargo, un \textsl{frame} no siempre es equivalente a una diapositiva. Un solo \texttt{frame} puede contener múltiples diapositivas.
         \end{itemize}
     \end{frame}
 
@@ -76,7 +85,11 @@
             \item El título de la presentación va entre llaves. Es posible agregar un título opcional, más corto, entre corchetes.
             \item Para los autores, es opcional agregar una versión corta de los nombres de los autores entre corchetes. Luego, entre llaves van los nombres completos de los autores, separados por \cmdbs{and}. También, es posible agregar una referencia a la institución de cada autor con \cmdbs{inst}.
             \item El nombre de los institutos va entre llaves y se separan con \cmdbs{and}. Es opcional agregar un acrónimo de los institutos entre corchetes.
-            \item Finalmente, en \cmdbs{logo}, se agrega el logo.
+            \item Se puede agregar un logo con:
+            \begin{itemize}
+                \item \cmdbs{logo}: el logo aparece en todas las diapositivas.
+                \item \cmdbs{titlegraphic}: solo aparece en la diapositiva de título.
+            \end{itemize} 
         \end{itemize}
     \end{frame}
 
@@ -140,6 +153,67 @@
         \end{itemize}
     \end{frame}
 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+    \begin{frame}[fragile]{Insertar figuras en \texttt{beamer}}
+        \justifying
+        Insertar una sola figura funciona igual que siempre. \textbf{No}
+        es necesario importar el paquete \emph{graphicx}, \texttt{beamer}
+        ya lo incluye por defecto. \\ [3ex]
+        \begin{columns}
+            \begin{column}{0.5\textwidth}
+                \begin{figure}
+                    \centering
+                    \includegraphics[height=0.2\paperheight]{perro.jpg}
+                    \caption{Perro corriendo}
+                    \label{fig:perro}
+                \end{figure}
+            \end{column}
+            \begin{column}{0.5\textwidth}
+                Sin embargo, es necesario añadir al \emph{preámbulo} el comando
+                {\scriptsize \mint{latex}|\setbeamertemplate{caption}[numbered]|}
+                para que las figuras queden numeradas.
+            \end{column}
+        \end{columns}
+
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{Subfiguras}
+        \framesubtitle{Paquete \emph{subcaption}}
+        Insertar varias figuras, también funciona igual que siempre.
+        \begin{figure}
+            \centering
+            \begin{subfigure}[b]{0.4\textwidth}
+                \centering
+                \includegraphics[width=2cm, height=2cm]{jupiter.jpg}
+                \caption{Júpiter}
+                \label{fig:jupiter}
+            \end{subfigure}
+            \hspace{1cm}
+            \begin{subfigure}[b]{0.4\textwidth}
+                \centering
+                \includegraphics[width=3.5cm, height=2cm]{saturno.jpg}
+                \caption{Saturno}
+                \label{fig:saturno}
+            \end{subfigure}\\
+            \begin{subfigure}[b]{0.4\textwidth}
+                \centering
+                \includegraphics[width=2cm, height=2cm]{urano.jpg}
+                \caption{Urano}
+                \label{fig:urano}
+            \end{subfigure}
+            \hspace{1cm}
+            \begin{subfigure}[b]{0.4\textwidth}
+                \centering
+                \includegraphics[width=3.5cm, height=2cm]{neptuno.jpg}
+                \caption{Neptuno}
+                \label{fig:neptuno}
+            \end{subfigure}
+            \caption{Planetas gaseosos}
+            \label{fig:planetas}
+        \end{figure}
+    \end{frame}
+
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[fragile]{Resaltando cosas importantes}
         \justifying
@@ -159,6 +233,23 @@
         \end{itemize}
     \end{frame}
 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{Resaltando cosas importantes}
+        \begin{minipage}{0.5\textwidth}
+            \begin{block}{Primer tipo de caja: block}
+                Contenido relevante para resaltar.
+            \end{block}
+        \end{minipage}
+        \begin{alertblock}{Segundo tipo de caja: alertblock}
+            Contenido relevante para resaltar.
+        \end{alertblock}
+        \begin{examples}
+            Tercer tipo de caja: examples. \\ 
+            Contenido relevante para resaltar. El título ``Examples''
+            es fijo, para modificar el idioma hay que modificar los archivos
+            fuente de \texttt{beamer}, lo cual hice para esta presentación.
+        \end{examples}
+    \end{frame}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}[fragile]{Temas}
         \begin{itemize}
@@ -192,7 +283,7 @@
         \textsl{columns}.
         \vspace{5mm}
         \begin{center}
-            \begin{minipage}{0.85\textwidth}
+            \begin{minipage}{0.89\textwidth}
                 \inputminted[fontsize=\tiny, frame=single]{latex}{two_columns.tex}
             \end{minipage}
         \end{center}
@@ -217,5 +308,20 @@
                 \includegraphics[width=0.8\linewidth]{gato.jpeg}
             \end{column}
         \end{columns}        
+    \end{frame}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \begin{frame}[fragile]{Minipáginas}
+        Existe el ambiente \cmdbs{minipage}, para manipular
+        elementos en un espacio reducido. \\ [3ex]
+        \begin{center}
+            \begin{minipage}{0.45\textwidth}        
+                \begin{minted}[frame=single]{latex}
+\begin{minipage}{width}
+    % Contenido
+\end{minipage}
+                \end{minted}
+            \end{minipage}
+        \end{center}
     \end{frame}
 \end{document}
