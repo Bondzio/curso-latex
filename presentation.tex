@@ -4,6 +4,8 @@
 \usepackage{minted}
 \usepackage{ragged2e}
 \usepackage{subcaption}
+\usepackage{biblatex}
+\addbibresource{references.bib}
 % \usepackage{subfig}
 % \usepackage{xcolor}
 % \usepackage{verbatim}
@@ -291,6 +293,7 @@
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{frame}{Diapositiva con dos columnas}
+        Texto \cite{einstein}.
         \begin{columns}[totalwidth=\textwidth]
             \begin{column}[t]{0.5\textwidth}
             \centering
@@ -323,5 +326,9 @@
                 \end{minted}
             \end{minipage}
         \end{center}
+    \end{frame}
+
+    \begin{frame}{Referencias}
+        \printbibliography
     \end{frame}
 \end{document}

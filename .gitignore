@@ -14,6 +14,12 @@
 *.vrb
 # escondo las soluciones a los ejercicios
 ejercicios/*.tex
+ejercicios/ejercicio4.pdf
+ejercicios/ejercicio5.pdf
+ejercicios/ejercicio6.pdf
+ejercicios/ejercicio7.pdf
+ejercicios/ejercicio8.pdf
+ejercicios/ejercicio9.pdf
 !ejercicios/ejercicio7.tex
 mientras.pdf
 
